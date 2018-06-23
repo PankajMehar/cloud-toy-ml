@@ -7,7 +7,23 @@ Author:  Anshul Kharbanda
 Created: 6 - 21 - 2018
 """
 import tensorflow as tf
-from . import FEATURE_COLUMNS, LABEL_COLUMN
+
+# The names of the input feature columns
+FEATURE_COLUMN_NAMES = [
+    'fixed acidity',
+	'volatile acidity',
+	'citric acid',
+	'residual sugar',
+	'chlorides',
+	'free sulfur dioxide',
+	'total sulfur dioxide',
+	'density',
+	'pH',
+	'sulphates',
+	'alcohol',
+    'quality'
+]
+LABEL_COLUMN_NAME = 'quality'
 
 # This dataset uses semicolons
 FIELD_DELIM = ';'
@@ -25,7 +41,7 @@ CSV_DEFAULTS = [
     [0.0], # pH
     [0.0], # sulphates
     [0.0], # alcohol
-    [0]    # quality
+    [0]  # quality
 ]
 
 def make_input_fn(filename, batch_size=100, epochs=None, shuffle=True):
@@ -52,8 +68,8 @@ def make_input_fn(filename, batch_size=100, epochs=None, shuffle=True):
         columns = tf.decode_csv(csv_row, CSV_DEFAULTS, FIELD_DELIM)
 
         # Extract features and labels
-        features = dict(zip(FEATURE_COLUMNS, columns))
-        labels = features.pop(LABEL_COLUMN)
+        features = dict(zip(FEATURE_COLUMN_NAMES, columns))
+        labels = features.pop(LABEL_COLUMN_NAME)
 
         # Return features and labels
         return features, labels
