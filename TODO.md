@@ -1,8 +1,8 @@
 # TO DO
 
 - Find a Dataset
-    - Determine inputs and outputs to predict
-    - Determine type of problem (regression or classification)
+    - ~~Determine type of problem (regression or classification)~~
+    - ~~Determine inputs and outputs to predict~~
     - Write data.py
 - Build a model
     - Write model.py
