@@ -9,3 +9,4 @@
 - Train and test!
     - Write serving.py
     - Write task.py
+- Write the README
