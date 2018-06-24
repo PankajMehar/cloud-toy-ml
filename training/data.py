@@ -9,7 +9,7 @@ Created: 6 - 21 - 2018
 import tensorflow as tf
 
 # The names of the input feature columns
-FEATURE_COLUMN_NAMES = [
+CSV_COLUMN_NAMES = [
     'fixed acidity',
 	'volatile acidity',
 	'citric acid',
@@ -26,10 +26,10 @@ FEATURE_COLUMN_NAMES = [
 LABEL_COLUMN_NAME = 'quality'
 
 # This dataset uses semicolons
-FIELD_DELIM = ';'
+CSV_DELIM = ';'
 
 # Default csv columns
-CSV_DEFAULTS = [
+CSV_COLUMN_DEFAULTS = [
     [0.0], # fixed acidity
     [0.0], # volatile acidity
     [0.0], # citric acid
@@ -65,10 +65,10 @@ def make_input_fn(filename, batch_size=100, epochs=None, shuffle=True):
         Parse csv row into feature and label tensor
         """
         # Parse columns
-        columns = tf.decode_csv(csv_row, CSV_DEFAULTS, FIELD_DELIM)
+        columns = tf.decode_csv(csv_row, CSV_COLUMN_DEFAULTS, CSV_DELIM)
 
         # Extract features and labels
-        features = dict(zip(FEATURE_COLUMN_NAMES, columns))
+        features = dict(zip(CSV_COLUMN_NAMES, columns))
         labels = features.pop(LABEL_COLUMN_NAME)
 
         # Return features and labels
