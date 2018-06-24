@@ -55,7 +55,7 @@ def make_input_fn(filename, batch_size=100, epochs=None, shuffle=True):
 
     :param filename: the name of the csv file to parse data from
     :param batch_size: the batch size
-    :param epochs: the number of epochs to return (if not None)
+    :param epochs: the number of epochs to repeat for (if None, repeat indefinitely)
     :param shuffle: if True, the data is shuffled
 
     :return: data input function

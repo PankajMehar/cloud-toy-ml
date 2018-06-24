@@ -18,7 +18,7 @@ def make_classifier(config):
     """
     # Using a linear classifier for computational ease
     return tf.estimator.LinearClassifier(
-        feature_columns= [
+        feature_columns=[
             tf.feature_column.numeric_column('fixed acidity', type=tf.float32),
             tf.feature_column.numeric_column('volatile acidity', type=tf.float32),
             tf.feature_column.numeric_column('citric acid', type=tf.float32),
