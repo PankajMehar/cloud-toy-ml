@@ -10,7 +10,7 @@ import tensorflow as tf
 
 # The names of the input feature columns
 CSV_COLUMN_NAMES = [
-    'fixed acidity',
+	'fixed acidity',
 	'volatile acidity',
 	'citric acid',
 	'residual sugar',
@@ -21,7 +21,7 @@ CSV_COLUMN_NAMES = [
 	'pH',
 	'sulphates',
 	'alcohol',
-    'quality'
+	'quality'
 ]
 LABEL_COLUMN_NAME = 'quality'
 
